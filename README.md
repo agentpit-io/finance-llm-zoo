@@ -29,7 +29,8 @@
 ## 💬 开发者社群
 
 扫码加入 **AgentPit 金融AI开发者群**，与量化开发者交流API使用技巧和金融AI应用。
-<img width="1054" height="1512" alt="008680caff8d497d1e646234537bcd27" src="https://github.com/user-attachments/assets/28c8c0e9-f05f-4e69-b7fb-c715f8bf0001" />
+<img width="1054" height="1512" alt="fa3cb9aa1e93da8d0ec5d5b092e6a1f1" src="https://github.com/user-attachments/assets/19e23202-04cf-4b0c-8f18-232234906cf6" />
+
 
 
  入群有问题，请微信：agentpit 加入，Star本仓库持续关注
