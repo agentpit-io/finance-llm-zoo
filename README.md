@@ -27,6 +27,7 @@ https://github.com/hangeaiagent/kronos-free-api
 
 > 🎁 **目前完全免费开放**
 ## 💬 开发者社群
+<img width="1054" height="1512" alt="d02a12fd7dec09385ae51c07cd12c967" src="https://github.com/user-attachments/assets/ec648634-9808-47c7-b699-9cdd1e34392c" />
 
 扫码加入 **AgentPit 金融AI开发者群**，与量化开发者交流API使用技巧和金融AI应用。
 
