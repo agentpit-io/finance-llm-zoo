@@ -10,7 +10,7 @@
 
 > 为量化开发者和金融研究者提供免费、开放的金融AI API接口  
 > — Google实时搜索 + **清华Kronos开源大模型+多因子K线预测** + **Fin-R1 金融大模型** + **FinGPT 情感分析**，即刻接入，无需信用卡。
-
+https://github.com/hangeaiagent/kronos-free-api
 **📖 完整文档：[develop.agentpit.io/help](https://develop.agentpit.io/help)**
 
 ---
@@ -29,7 +29,6 @@
 ## 💬 开发者社群
 
 扫码加入 **AgentPit 金融AI开发者群**，与量化开发者交流API使用技巧和金融AI应用。
- <img width="1054" height="1512" alt="eda25256f9250b58b71471cd5b144ea5" src="https://github.com/user-attachments/assets/9f37c467-e99a-422b-a830-158ae3bc53cc" />
 
 
 
