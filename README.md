@@ -1,24 +1,38 @@
-# 🚀 AgentPit 金融AI开放API平台
+# 🏛️ Finance LLM Zoo · 开源金融大模型动物园
 
-[![Free API](https://img.shields.io/badge/API-Free-green)](https://develop.agentpit.io/help)
-[![Google Search](https://img.shields.io/badge/Google%20Search-Grounding-blue)](https://develop.agentpit.io/help#google-search)
-[![K-Line Pro](https://img.shields.io/badge/K--Line-Pro%20多因子-orange)](https://develop.agentpit.io/help#kpred)
-[![Fin-R1](https://img.shields.io/badge/Fin--R1-金融大模型-purple)](https://develop.agentpit.io/help#llm)
-[![FinGPT](https://img.shields.io/badge/FinGPT-情感分析-cyan)](https://develop.agentpit.io/help#fingpt)
-[![CFGPT](https://img.shields.io/badge/CFGPT-中文金融大模型-red)](https://develop.agentpit.io/help#cfgpt)
+> **公益策展 · 来自顶尖高校与研究机构的开源金融大模型 · 免费、开放、无需注册**
+
+[![Curation](https://img.shields.io/badge/Curated%20by-AgentPit-orange)](https://github.com/agentpit-io)
+[![Open Source First](https://img.shields.io/badge/Open%20Source-First-blue)](#-策展原则)
+[![Free API](https://img.shields.io/badge/API-Free%20Forever-green)](https://develop.agentpit.io/help)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> 为量化开发者和金融研究者提供免费、开放的金融AI API接口  
-> — Google实时搜索 + **清华Kronos开源大模型+多因子K线预测** + **Fin-R1 金融大模型** + **FinGPT 情感分析**，即刻接入，无需信用卡。
-https://github.com/hangeaiagent/kronos-free-api
-
-> 🏢 **组织镜像 · 现已同步至 [@agentpit-io/kronos-free-api](https://github.com/agentpit-io/kronos-free-api)** — 欢迎在组织仓 Star / Watch / Fork
-
-**📖 完整文档：[develop.agentpit.io/help](https://develop.agentpit.io/help)**
+**🌐 项目主页 (完整模型清单 + 对比):** [www.agentpit.io/finance-llm-zoo](https://www.agentpit.io/finance-llm-zoo)  
+**🔬 上游研究仓库 (原始 changelog / issue 讨论):** [hangeaiagent/kronos-free-api](https://github.com/hangeaiagent/kronos-free-api)  
+**📖 API 完整文档:** [develop.agentpit.io/help](https://develop.agentpit.io/help)
 
 ---
 
-## ✨ 核心能力
+## 🎯 项目定位
+
+**Finance LLM Zoo** 是 [AgentPit](https://github.com/agentpit-io) 团队公益维护的开源金融大模型策展项目 —— 收录来自**清华、上海财经、复旦、同济、哥伦比亚、武汉大学、度小满、北京中关村学院**等顶尖机构的开源金融基础模型,并为其中已支持的模型提供**永久免费的 API 接入**,方便研究者、学生、独立开发者零成本调用。
+
+**已收录 8 个模型 · 已提供免费 API 5 个 · 策展中待接入 3 个** —— 完整清单、局限性、许可证信息见[项目主页](https://www.agentpit.io/finance-llm-zoo)。
+
+## 📜 策展原则
+
+1. **开源优先** · 只收录采用 OSI 认可开源许可证(MIT / Apache 2.0 / CC BY-NC 等)的模型 · 拒绝闭源与"开源展示但不能用"的伪开源
+2. **如实公示** · 每个模型的局限、许可证限制、部署成本、缺陷都直接列在主页上 · 不美化不遮掩
+3. **免费共享** · 对已提供 API 的模型 · 承诺永久免费供个人研究 / 学习 / 独立开发使用 · 不设注册墙
+4. **上游致敬** · 所有 API 均标注原始论文、作者、GitHub 仓库 · 鼓励用户去原仓库 Star、引用、贡献
+
+---
+
+
+## ✨ 当前已提供的免费 API (5/8)
+
+> 以下是已完成 API 化、可直接调用的模型。**其余 3 个模型**(轩辕 FinX1、DISC-FinLLM、PIXIU/FinMA) 仍在策展和评估中,请参考[项目主页](https://www.agentpit.io/finance-llm-zoo)获取最新进度。
+
 
 | API | 功能 | 典型场景 |
 |---|---|---|
