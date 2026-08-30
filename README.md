@@ -44,7 +44,8 @@
 
 > 🎁 **目前完全免费开放**
 ## 💬 开发者社群
-<img width="1054" height="1512" alt="f7902b81412437fd50ede3f5326baaef" src="https://github.com/user-attachments/assets/25474a0b-7d13-4387-bfa7-fc018b72666d" />
+
+<img width="1054" height="1512" alt="8fd2cac87e3731c174eb53596531f893" src="https://github.com/user-attachments/assets/6cb65fc2-810a-40c8-9249-0b174f30bf04" />
 
 
 
