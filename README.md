@@ -7,9 +7,9 @@
 [![Free API](https://img.shields.io/badge/API-Free%20Forever-green)](https://develop.agentpit.io/help)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**🌐 项目主页 (完整模型清单 + 对比):** [www.agentpit.io/finance-llm-zoo](https://www.agentpit.io/finance-llm-zoo)  
+**🌐 项目主页 (完整对比 + 交互):** [www.agentpit.io/finance-llm-zoo](https://www.agentpit.io/finance-llm-zoo)  
 **🔬 上游研究仓库 (原始 changelog / issue 讨论):** [hangeaiagent/kronos-free-api](https://github.com/hangeaiagent/kronos-free-api)  
-**📖 API 完整文档:** [develop.agentpit.io/help](https://develop.agentpit.io/help)
+**📖 免费 API 完整文档:** [develop.agentpit.io/help](https://develop.agentpit.io/help)
 
 ---
 
@@ -17,727 +17,221 @@
 
 **Finance LLM Zoo** 是 [AgentPit](https://github.com/agentpit-io) 团队公益维护的开源金融大模型策展项目 —— 收录来自**清华、上海财经、复旦、同济、哥伦比亚、武汉大学、度小满、北京中关村学院**等顶尖机构的开源金融基础模型,并为其中已支持的模型提供**永久免费的 API 接入**,方便研究者、学生、独立开发者零成本调用。
 
-**已收录 8 个模型 · 已提供免费 API 5 个 · 策展中待接入 3 个** —— 完整清单、局限性、许可证信息见[项目主页](https://www.agentpit.io/finance-llm-zoo)。
+**已收录 8 个模型 · 已提供免费 API 5 个 · 策展中待接入 3 个**
 
 ## 📜 策展原则
 
 1. **开源优先** · 只收录采用 OSI 认可开源许可证(MIT / Apache 2.0 / CC BY-NC 等)的模型 · 拒绝闭源与"开源展示但不能用"的伪开源
-2. **如实公示** · 每个模型的局限、许可证限制、部署成本、缺陷都直接列在主页上 · 不美化不遮掩
+2. **如实公示** · 每个模型的局限、许可证限制、部署成本、缺陷都直接列出 · 不美化不遮掩
 3. **免费共享** · 对已提供 API 的模型 · 承诺永久免费供个人研究 / 学习 / 独立开发使用 · 不设注册墙
 4. **上游致敬** · 所有 API 均标注原始论文、作者、GitHub 仓库 · 鼓励用户去原仓库 Star、引用、贡献
 
 ---
 
+## 📚 收录模型清单
 
-## ✨ 当前已提供的免费 API (5/8)
+### ✅ 已提供免费 API (5)
 
-> 以下是已完成 API 化、可直接调用的模型。**其余 3 个模型**(轩辕 FinX1、DISC-FinLLM、PIXIU/FinMA) 仍在策展和评估中,请参考[项目主页](https://www.agentpit.io/finance-llm-zoo)获取最新进度。
+#### 1. [Fin-R1](https://github.com/SUFE-AIFLM-Lab/Fin-R1) · 上海财经大学
 
+[![GitHub Stars](https://img.shields.io/github/stars/SUFE-AIFLM-Lab/Fin-R1?style=flat)](https://github.com/SUFE-AIFLM-Lab/Fin-R1) [![License](https://img.shields.io/badge/License-Apache%202.0-blue)](https://github.com/SUFE-AIFLM-Lab/Fin-R1/blob/main/LICENSE)
 
-| API | 功能 | 典型场景 |
-|---|---|---|
-| 🔍 **Google搜索API** | 实时搜索Google全网，AI自动生成摘要 | 获取券商研报、新闻资讯、机构观点 |
-| 📈 **基于清华Kronos开源大模型+公司信息数据调整：K线预测API** | 清华大学开源金融模型Kronos **Pro 多因子模型**预测未来N日K线 + 评级 | 量化策略辅助、趋势研判、因子分析 |
-| 🧠 **Fin-R1 金融大模型API** | 上海财经大学开源金融LLM，链式推理 | 研报解读、财报问答、投资逻辑分析 |
-| 💬 **FinGPT 情感分析API** | 哥伦比亚大学AI4Finance，14k+ Stars | 金融新闻情感打标，事件驱动信号辅助 |
-| 📑 **CFGPT 中文金融大模型API** | 同济大学FinLab + 上海AI实验室，InternLM2-7B | 年报解析、研报生成、财务指标计算 |
+- **机构** · 上海财经大学 AI-FLM Lab
+- **发布** · 2024 年 · 底座:自研(DeepSeek-R1 微调)
+- **定位** · A 股专项金融推理模型 · AgentPit 首个上线的金融大模型 API
+- **核心能力** · 研报解读 / 财报问答 / 投资逻辑分析 · 思维链推理 · OpenAI messages 兼容格式
+- **性能** · 中文金融 NLP 评测超越同规模通用模型 · 财报问答准确率 78%+
+- **局限** · 主要覆盖 A 股 · 港股/美股任务性能有限
+- **免费 API** · `POST /api/v1/open-api/llm` → [详情](https://www.agentpit.io/finance-models/fin-r1)
 
-> 🎁 **目前完全免费开放**
-## 💬 开发者社群
+#### 2. [Kronos](https://github.com/shiyu-coder/Kronos) · 清华大学(IIIS 交叉信息研究院 + 自动化系)
 
-<img width="1054" height="1512" alt="8fd2cac87e3731c174eb53596531f893" src="https://github.com/user-attachments/assets/6cb65fc2-810a-40c8-9249-0b174f30bf04" />
+[![GitHub Stars](https://img.shields.io/github/stars/shiyu-coder/Kronos?style=flat)](https://github.com/shiyu-coder/Kronos) [![License](https://img.shields.io/badge/License-MIT-yellow)](https://github.com/shiyu-coder/Kronos/blob/main/LICENSE) [![Paper](https://img.shields.io/badge/Paper-arXiv%3A2508.02739-red)](https://arxiv.org/abs/2508.02739)
 
+- **机构** · 清华大学 IIIS 交叉信息研究院 + 自动化系
+- **发布** · 2025 年 8 月(AAAI 2026 录用)· 底座:自研自回归 Transformer(4.1M ~ 499M 参数)
+- **定位** · 全球首个专为金融 K 线数据预训练的开源基础大模型 · "把 K 线当语言来学"
+- **核心能力** · 价格序列预测 / 波动率预测 / 合成 K 线生成 / 零样本跨资产泛化(股/期/汇/加密) · 45+ 交易所 · 120 亿条 K 线预训练
+- **性能** · 零样本 RankIC 超 TimesFM +93% · 波动率 MAE 优于所有基线 9% · 回测保真度提升 22%
+- **局限** · 只处理 K 线价量数据 · 无文本能力 · 499M 大版本未开源 · 需 Qlib 接入 A 股回测
+- **在线 Demo** · [shiyu-coder.github.io/Kronos-demo](https://shiyu-coder.github.io/Kronos-demo/)
+- **免费 API** · `POST /api/v1/open-api/kronos` → [详情](https://www.agentpit.io/finance-models/kronos)
 
+#### 3. [FinGPT](https://github.com/AI4Finance-Foundation/FinGPT) · AI4Finance · 哥伦比亚大学
 
-扫码加入 **AgentPit 金融AI开发者群**，与量化开发者交流API使用技巧和金融AI应用。
+[![GitHub Stars](https://img.shields.io/github/stars/AI4Finance-Foundation/FinGPT?style=flat)](https://github.com/AI4Finance-Foundation/FinGPT) [![License](https://img.shields.io/badge/License-MIT-yellow)](https://github.com/AI4Finance-Foundation/FinGPT/blob/main/LICENSE)
 
+- **机构** · AI4Finance Foundation · 哥伦比亚大学
+- **发布** · 2023 年(持续更新)· 底座:多选 LLaMA-2 / ChatGLM2 / Qwen / InternLM
+- **定位** · 开源金融 LLM 框架(非单一固定模型)· 四大模组灵活组合
+- **核心能力** · 金融咨询 · 文本情感分析 · 内嵌财务公式(ROE/DCF)· RAG 检索问答
+- **性能** · 金融 NLP / 试题 / 资料 / 时事 四维度全能 · 中文咨询超越同期多数开源模型
+- **局限** · 底座 Baichuan-13B 偏老 · 推理深度弱于轩辕 FinX1 · 2024 年后无重大更新
+- **免费 API** · `POST /api/v1/open-api/fingpt` → [详情](https://www.agentpit.io/finance-models/fingpt)
 
+#### 4. [CFGPT](https://github.com/TongjiFinLab/CFGPT) · 同济大学 FinLab · 上海人工智能实验室
 
- 入群有问题，请微信：agentpit 加入，Star本仓库持续关注
+[![GitHub Stars](https://img.shields.io/github/stars/TongjiFinLab/CFGPT?style=flat)](https://github.com/TongjiFinLab/CFGPT) [![License](https://img.shields.io/badge/License-Apache%202.0-blue)](https://github.com/TongjiFinLab/CFGPT/blob/main/LICENSE)
+
+- **机构** · 同济大学 FinLab · 上海人工智能实验室
+- **发布** · 2023 年 · 底座:InternLM / GLM-4 (6B / 9B)
+- **定位** · 中文金融 GPT · 聚焦 A 股市场研究
+- **核心能力** · 年报深度解析 · 研究报告生成 · 财务指标计算(ROE/PE/DCF)· A 股监管适配
+- **性能** · 年报结构化提取 F1 值超同期所有开源模型 · 中文金融 NLP 综合超 GPT-3.5(2023 测试)
+- **局限** · 高度垂直年报场景 · 实时行情/消息面弱 · 无完整思维链输出
+- **免费 API** · `POST /api/v1/open-api/cfgpt` → [详情](https://www.agentpit.io/finance-models/cfgpt)
+
+#### 5. [M3](https://github.com/ArthurZhang02/m3-market-microstructure) · 北京中关村学院
+
+[![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0-red)](https://github.com/ArthurZhang02/m3-market-microstructure) [![Paper](https://img.shields.io/badge/Paper-arXiv%3A2608.19227-red)](https://arxiv.org/abs/2608.19227)
+
+- **机构** · 北京中关村学院(Zhang et al. · AAAI 系列)
+- **发布** · 2026 年 8 月 · 底座:自研 VQ Tokenizer + 因果 Transformer
+- **定位** · **市场微观结构生成式基础模型** · 不预测涨跌 · 生成未来订单流轨迹
+- **核心能力** · 生成挂单/撤单序列(价格由撮合规则还原)· 冲击成本估计 · 反事实分析 · 采样式而非确定式
+- **训练数据** · 沪深300 + 中证500 共 800 只标的 · 约 319 亿条逐笔委托事件
+- **性能** · 开源三档 Tiny 10M / Small 25M / Base 75M · CPU 即可推理(单次模拟约 30 秒)· 复现市场典型事实
+- **局限** · **非文本模型**,不能问答 · 原生输入需付费 Level-2 数据(API 只提供内置样本模拟)· 366M / 1.27B 未开源 · **CC BY-NC 4.0 商用需授权** · 约 1/3 时间间隔为负(已反馈上游)
+- **免费 API** · `POST /api/v1/open-api/microstructure` → [详情](https://www.agentpit.io/finance-models/m3)
 
 ---
 
+### ⏳ 策展中·待接入 API (3)
+
+#### 6. [轩辕 XuanYuan FinX1](https://github.com/Duxiaoman-DI/XuanYuan) · 度小满 AI-Lab
+
+[![GitHub Stars](https://img.shields.io/github/stars/Duxiaoman-DI/XuanYuan?style=flat)](https://github.com/Duxiaoman-DI/XuanYuan) [![License](https://img.shields.io/badge/License-Apache%202.0-blue)](https://github.com/Duxiaoman-DI/XuanYuan/blob/main/LICENSE)
+
+- **机构** · 度小满 AI-Lab · **发布** · 2024 年 12 月 · **底座** · 自研(Qwen 系架构)
+- **定位** · 国内首个金融推理大模型 · 类 GPT-O1 · 思维链 + 过程奖励 + 强化学习
+- **核心能力** · 决策与风控 / 宏观-市场-政策多维分析 / 结构化财务数据提取
+- **性能** · FinanceIQ 金融评测 10 类(CPA / 银行 / 证券从业等)全面超 GPT-4o 和 Qwen2.5-72B
+- **接入难点** · 需 4× A100/H100 并行 · 本地部署成本极高 · Preview 版本
+
+#### 7. [DISC-FinLLM](https://github.com/FudanDISC/DISC-FinLLM) · 复旦大学 DISC Lab
+
+[![GitHub Stars](https://img.shields.io/github/stars/FudanDISC/DISC-FinLLM?style=flat)](https://github.com/FudanDISC/DISC-FinLLM) [![License](https://img.shields.io/badge/License-Apache%202.0-blue)](https://github.com/FudanDISC/DISC-FinLLM/blob/main/LICENSE)
+
+- **机构** · 复旦大学 DISC Lab · **发布** · 2023 年 · **底座** · Baichuan-13B(指令微调)
+- **定位** · 中文金融大模型 · 面向国内金融从业者和研究场景
+- **核心能力** · 金融咨询(投资/保险/理财)· NLP 情感/NER/分类 · 内嵌财务公式 · RAG 增强
+- **性能** · 年报分析 F1 超同期开源模型 · 中文金融知识问答 72%+
+- **接入难点** · 底座 Baichuan-13B 版本较老 · 无 O1 式思维链 · 实时行情分析弱
+
+#### 8. [PIXIU / FinMA](https://github.com/The-FinAI/PIXIU) · 武汉大学 & The-FinAI
+
+[![GitHub Stars](https://img.shields.io/github/stars/The-FinAI/PIXIU?style=flat)](https://github.com/The-FinAI/PIXIU) [![License](https://img.shields.io/badge/License-Apache%202.0-blue)](https://github.com/The-FinAI/PIXIU/blob/main/LICENSE)
+
+- **机构** · 武汉大学 & The-FinAI 联合团队 · **发布** · 2023 年 · **底座** · LLaMA(7B/13B/30B)
+- **定位** · 综合框架:模型(FinMA)+ 数据(FIT 136K 指令)+ 评测(FLARE)
+- **核心能力** · FLARE 9 种金融 NLP 任务学术权威评测 · 情感/NER/股票趋势预测 · 完整微调教程
+- **性能** · 金融情感/NER/股票预测 超 BloombergGPT 和 GPT-4(2023 测试)
+- **接入难点** · 主要英文 · 中文 A 股场景性能有限 · LLaMA 底座中文弱于 Qwen/GLM
+
 ---
 
-## 🧠 K线预测模型说明
+## 📊 横向对比总表
 
-K线预测 API 采用 **Pro 多因子模型**，非简单方向预测，而是综合 8 个维度输出：
+| 模型 | 机构 | 发布 | 底座 | 许可证 | 部署成本 | 中文A股 | 推理深度 | API 状态 |
+|---|---|---|---|---|---|---|---|---|
+| [Fin-R1](https://github.com/SUFE-AIFLM-Lab/Fin-R1) | 上海财经大学 | 2024 | DeepSeek-R1 微调 | Apache 2.0 | 中 (单卡 A100) | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ✅ 已上线 |
+| [Kronos](https://github.com/shiyu-coder/Kronos) | 清华大学 | 2025.08 | 自研 4.1M-499M | MIT | 低 (CPU 可跑) | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ✅ 已上线 |
+| [FinGPT](https://github.com/AI4Finance-Foundation/FinGPT) | AI4Finance / 哥大 | 2023 | 多选 LLaMA/GLM/Qwen | MIT | 极低 (单卡 A100 80G) | ⭐⭐⭐ | ⭐⭐ | ✅ 已上线 |
+| [CFGPT](https://github.com/TongjiFinLab/CFGPT) | 同济 + 上海AI实验室 | 2023 | InternLM / GLM-4 | Apache 2.0 | 低 (6B 单卡 3090) | ⭐⭐⭐⭐ | ⭐⭐⭐ | ✅ 已上线 |
+| [M3](https://github.com/ArthurZhang02/m3-market-microstructure) | 北京中关村学院 | 2026.08 | VQ Tokenizer + Trans | **CC BY-NC 4.0** | 极低 (CPU) | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ✅ 已上线 |
+| [轩辕 FinX1](https://github.com/Duxiaoman-DI/XuanYuan) | 度小满 | 2024.12 | 自研 Qwen 系 | Apache 2.0 | 高 (4× A100/H100) | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⏳ 策展中 |
+| [DISC-FinLLM](https://github.com/FudanDISC/DISC-FinLLM) | 复旦大学 | 2023 | Baichuan-13B | Apache 2.0 | 中 (单卡 A100) | ⭐⭐⭐⭐ | ⭐⭐ | ⏳ 策展中 |
+| [PIXIU/FinMA](https://github.com/The-FinAI/PIXIU) | 武汉大学 | 2023 | LLaMA 7B/13B/30B | Apache 2.0 | 低 (7B 单卡 3090) | ⭐⭐⭐ | ⭐⭐⭐ | ⏳ 策展中 |
 
-| 因子 | 默认权重 | 说明 |
-|---|---|---|
-| 清华大学开源金融模型Kronos  | 10% | Kronos 深度学习形态预测 |
-| 均线趋势 | 10% | MA5/10/20/60 多头排列 |
-| MACD动量 | 8% | MACD柱 / ATR 比值 |
-| RSI超买卖 | 7% | RSI14 超买超卖判断 |
-| **主力净流入** | **35%** | 近5日主力资金净流入 |
-| 筹码分布 | 15% | 主力 vs 散户资金背离 |
-| 近5日K线 | 5% | 近5日阳线占比 |
-| PE估值 | 10% | 当前PE相对历史分位 |
-
-模型输出：调整后K线序列、综合评级（强烈看多/温和看多/中性/温和看空/强烈看空）、各因子贡献明细。
+> 💡 **更完整的对比 + 详细性能/局限说明**,请访问项目主页 [www.agentpit.io/finance-llm-zoo](https://www.agentpit.io/finance-llm-zoo)
 
 ---
 
-## 🏁 快速开始
+## 🚀 免费 API 简要接入(可选)
 
-### 第一步：注册账号
+上述 **5 个已上线模型**可通过 AgentPit 免费 API 直接调用,零本地部署成本,适合快速原型验证。
 
-访问 **[agentpit.io](https://www.agentpit.io/finance)** → 点击右上角注册（免费，无需信用卡）
-
-### 第二步：申请API Key
-
-登录后 → 点右上角头像 → **「进入后台」** → 左侧「开发API」→「我的API」→「申请新API」
-
-选择需要的 API（Google搜索 / K线预测 / Fin-R1大模型 / FinGPT情感分析），提交申请。管理员审批通过后你会收到一个 `oapk_` 开头的API Key。
-
-### 第三步：开始调用
+### 3 步接入
 
 ```bash
-# 快速测试（curl）
-curl -X POST https://api.agentpit.io/v1/open-api/kpred \
-  -H "Authorization: Bearer oapk_your_key_here" \
+# 1. 注册账号
+open https://www.agentpit.io/register
+
+# 2. 申请 API Key
+open https://develop.agentpit.io/apply
+
+# 3. 调用示例(以 Fin-R1 为例)
+curl -X POST https://develop.agentpit.io/api/v1/open-api/llm \
+  -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
-  -d '{"code": "300308", "days": 5}'
+  -d '{
+    "model": "fin-r1",
+    "messages": [{"role":"user","content":"分析茅台 2024 年报"}]
+  }'
 ```
 
----
+### 全部 API 端点
 
-## 📡 API 接口文档
-
-### 1. Google 搜索 API
-
-**接口地址**
-```
-POST https://api.agentpit.io/v1/open-api/search
-```
-
-**请求参数**
-
-| 参数 | 类型 | 必填 | 说明 |
-|---|---|---|---|
-| `query` | string | ✅ | 搜索关键词，如 "贵州茅台 机构评级 最新研报" |
-
-**Python 示例**
-
-```python
-import requests
-
-API_KEY = "oapk_your_key_here"
-
-resp = requests.post(
-    "https://api.agentpit.io/v1/open-api/search",
-    headers={"Authorization": f"Bearer {API_KEY}"},
-    json={"query": "贵州茅台 机构评级 最新研报 2026"},
-)
-data = resp.json()
-print(data["result"])      # AI搜索摘要
-```
-
-**Node.js 示例**
-
-```javascript
-const res = await fetch("https://api.agentpit.io/v1/open-api/search", {
-  method: "POST",
-  headers: {
-    "Authorization": "Bearer oapk_your_key_here",
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({ query: "紫金矿业 铜价上涨影响分析" }),
-});
-const { result } = await res.json();
-console.log(result);
-```
-
-**返回格式**
-```json
-{
-  "result": "根据最新搜索，中际旭创2026年Q1净利润57.35亿元，同比增长262%...",
-  "latencyMs": 3200
-}
-```
-
----
-
-### 2. K线预测 API（Pro 多因子）
-
-**接口地址**
-```
-POST https://api.agentpit.io/v1/open-api/kpred
-```
-
-**请求参数**
-
-| 参数 | 类型 | 必填 | 说明 |
-|---|---|---|---|
-| `code` | string | ✅ | 股票代码，如 `300308`、`600519` |
-| `days` | number | 否 | 预测天数 1~30，默认 5 |
-
-**Python 示例**
-
-```python
-import requests
-
-API_KEY = "oapk_your_key_here"
-
-resp = requests.post(
-    "https://api.agentpit.io/v1/open-api/kpred",
-    headers={"Authorization": f"Bearer {API_KEY}"},
-    json={"code": "300308", "days": 5},
-)
-data = resp.json()
-pro = data["pro"]
-
-# 评级与预期收益
-print(f"{data['name']}  最新收盘: {data['last_close']}")
-print(f"综合评级: {pro['rating']}  置信度: {pro['confidence']}")
-print(f"预期涨跌幅: {pro['adj_return_pct']}%")
-
-# 调整后K线预测
-print("\n未来K线预测:")
-for p in data["predictions"]:
-    print(f"  {p['date']}  开:{p['open']:.2f}  高:{p['high']:.2f}  低:{p['low']:.2f}  收:{p['close']:.2f}")
-
-# 各因子贡献（按贡献绝对值排序）
-print("\n因子明细:")
-for f in pro["factors"]:
-    print(f"  {f['label']:8s}  得分:{f['score']:+.3f}  权重:{f['weight']:.0%}  贡献:{f['contribution']:+.3f}")
-```
-
-**Node.js 示例**
-
-```javascript
-const API_KEY = "oapk_your_key_here";
-
-const res = await fetch("https://api.agentpit.io/v1/open-api/kpred", {
-  method: "POST",
-  headers: {
-    "Authorization": `Bearer ${API_KEY}`,
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({ code: "600519", days: 5 }),
-});
-
-const data = await res.json();
-const { name, last_close, predictions, pro } = data;
-
-console.log(`${name} — 评级: ${pro.rating}  置信度: ${pro.confidence}`);
-console.log(`预期涨跌幅: ${pro.adj_return_pct}%`);
-
-predictions.forEach(p => {
-  console.log(`  ${p.date}: 开${p.open} 高${p.high} 低${p.low} 收${p.close}`);
-});
-```
-
-**返回格式**
-
-```json
-{
-  "symbol": "300308",
-  "name": "中际旭创",
-  "last_close": 1332.52,
-  "last_date": "2026-06-25",
-  "predictions": [
-    { "date": "2026-06-26", "open": 1310.0, "high": 1350.0, "low": 1290.0, "close": 1340.0, "volume": 420000 },
-    { "date": "2026-06-27", "open": 1340.0, "high": 1370.0, "low": 1315.0, "close": 1355.0, "volume": 388000 }
-  ],
-  "pro": {
-    "composite_score": 0.312,
-    "rating": "温和看多",
-    "confidence": "62%",
-    "conflict_level": "low",
-    "adj_return_pct": 3.85,
-    "factor_return_pct": 4.12,
-    "kronos_raw_return_pct": 1.20,
-    "sigma_daily_pct": 2.15,
-    "factors": [
-      { "key": "main_flow", "label": "主力净流入", "score": 0.68, "weight": 0.35, "contribution": 0.238 },
-      { "key": "flow_div",  "label": "筹码分布",   "score": 0.41, "weight": 0.15, "contribution": 0.062 },
-      { "key": "kronos",   "label": "Kronos技术",  "score": 0.35, "weight": 0.10, "contribution": 0.035 },
-      { "key": "ma_align", "label": "均线趋势",    "score": 0.28, "weight": 0.10, "contribution": 0.028 }
-    ]
-  },
-  "latencyMs": 1850
-}
-```
-
-> **字段说明：**
-> - `composite_score`：综合得分 -1（强烈看空）到 +1（强烈看多）
-> - `rating`：强烈看多 / 温和看多 / 中性观望 / 温和看空 / 强烈看空
-> - `predictions`：已融合多因子调整后的K线序列（非纯模型原始输出）
-> - `factors`：按 contribution 绝对值降序排列，方便快速定位主导因子
-
----
-
----
-
-## ⚙️ 自定义因子权重
-
-K线预测 API 支持**每个用户独立设置因子权重**，权重绑定账号，所有 API 调用自动生效。
-
-### 如何设置
-
-登录 [develop.agentpit.io/dashboard/open-api](https://develop.agentpit.io/dashboard/open-api)，K线预测审批通过后，页面下方会出现「自定义因子权重」面板：
-
-- 拖动 8 个因子的滑块调整占比
-- 系统自动归一化（无需手动凑 100%）
-- 点击「保存权重」即时生效
-
-### 权重策略建议
-
-| 使用场景 | 推荐调整 |
-|---|---|
-| 偏重资金面 | 主力净流入 50%+，筹码分布 20% |
-| 偏重技术面 | 均线趋势/MACD/RSI 合计 40%+ |
-| 偏重估值 | PE估值 25%+，降低其他权重 |
-| 量化中性 | 使用默认权重（主力净流入 35% 为核心）|
-
-### 返回结果中验证权重
-
-每次 API 响应的 `pro.factors[].weight` 字段会显示**本次使用的实际权重**，方便调试：
-
-```python
-resp = requests.post("https://api.agentpit.io/v1/open-api/kpred", ...)
-for f in resp.json()["pro"]["factors"]:
-    print(f"{f['label']:8s}  当前权重: {f['weight']:.0%}  贡献: {f['contribution']:+.3f}")
-```
-
----
-
----
-
-### 3. Fin-R1 金融大模型 API
-
-**接口地址**
-```
-POST https://api.agentpit.io/v1/open-api/llm
-```
-
-**请求参数**
-
-| 参数 | 类型 | 必填 | 说明 |
-|---|---|---|---|
-| `messages` | array | ✅ | 对话消息数组，格式同 OpenAI |
-| `max_tokens` | number | 否 | 最大输出 token，默认 1024 |
-| `temperature` | number | 否 | 随机性 0~1，默认 0.7 |
-
-**Python 示例**
-
-```python
-import requests
-
-API_KEY = "oapk_your_key_here"
-
-resp = requests.post(
-    "https://api.agentpit.io/v1/open-api/llm",
-    headers={"Authorization": f"Bearer {API_KEY}"},
-    json={
-        "messages": [
-            {"role": "user", "content": "分析贵州茅台2026年Q1财报净利润下降5%，给出投资建议"}
-        ],
-        "max_tokens": 800,
-    },
-)
-data = resp.json()
-print(data["content"])        # 模型分析文字
-print(data["tokensUsed"])     # 消耗 token 数
-print(data["latencyMs"])      # 响应耗时(ms)
-```
-
-**Node.js 示例**
-
-```javascript
-const res = await fetch("https://api.agentpit.io/v1/open-api/llm", {
-  method: "POST",
-  headers: {
-    "Authorization": "Bearer oapk_your_key_here",
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    messages: [{ role: "user", content: "紫金矿业铜价上涨对业绩的影响分析" }],
-    max_tokens: 600,
-  }),
-});
-const { content, latencyMs } = await res.json();
-console.log(content);
-```
-
-**返回格式**
-
-```json
-{
-  "model": "fin-r1",
-  "content": "根据贵州茅台2026年Q1财报数据分析...\n\n1. 净利润下降原因：...\n2. 投资建议：...",
-  "tokensUsed": 856,
-  "latencyMs": 8500
-}
-```
-
-> **适用场景：** 研报解读、财报问答、投资逻辑分析、行业趋势分析  
-> **不适合：** 实时行情查询（无联网）、高频调用（响应约5~15秒）、结构化JSON输出
-
----
-
-### 4. FinGPT 金融情感分析 API
-
-基于哥伦比亚大学 AI4Finance Foundation 开源的 FinGPT（GitHub 14k+ Stars，MIT协议），使用 ChatGLM2-6B + LoRA 微调版本，专门针对金融文本情感分析优化，支持中英文双语输入。
-
-**接口地址**
-```
-POST https://api.agentpit.io/v1/open-api/fingpt
-```
-
-**请求参数**
-
-| 参数 | 类型 | 必填 | 说明 |
-|---|---|---|---|
-| `text` | string | ✅ | 待分析的金融文本，中英文均可，建议 500 字以内 |
-
-**Python 示例**
-
-```python
-import requests
-
-API_KEY = "oapk_your_key_here"
-
-def analyze_sentiment(text: str) -> dict:
-    resp = requests.post(
-        "https://api.agentpit.io/v1/open-api/fingpt",
-        headers={"Authorization": f"Bearer {API_KEY}"},
-        json={"text": text},
-        timeout=30,
-    )
-    resp.raise_for_status()
-    return resp.json()
-
-# 单条分析
-result = analyze_sentiment("贵州茅台Q1净利润同比增长18%，超市场预期")
-print(f"情感：{result['sentiment']}  延迟：{result['latencyMs']}ms")
-# 情感：positive  延迟：118ms
-
-# 批量分析新闻流
-news_list = [
-    "贵州茅台Q1净利润同比增长18%，超市场预期",
-    "比亚迪Q2营收大幅下滑，市场预期落空",
-    "央行维持利率不变，市场反应平稳",
-    "Apple reports record quarterly earnings, beating analyst estimates",
-]
-
-for news in news_list:
-    r = analyze_sentiment(news)
-    label = {"positive": "📈 正面", "negative": "📉 负面", "neutral": "➖ 中性"}[r["sentiment"]]
-    print(f"{label}  {news[:30]}")
-```
-
-**Node.js 示例**
-
-```javascript
-const API_KEY = "oapk_your_key_here";
-
-async function analyzeSentiment(text) {
-  const res = await fetch("https://api.agentpit.io/v1/open-api/fingpt", {
-    method: "POST",
-    headers: {
-      "Authorization": `Bearer ${API_KEY}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ text }),
-  });
-  return res.json();
-}
-
-// 事件驱动策略辅助
-const news = "Apple reports record quarterly revenue, shares surge in after-hours";
-const { sentiment } = await analyzeSentiment(news);
-if (sentiment === "positive") {
-  console.log("触发正面事件信号，考虑买入或持仓");
-} else if (sentiment === "negative") {
-  console.log("触发负面事件信号，考虑风控或减仓");
-}
-```
-
-**返回格式**
-
-```json
-{
-  "model": "fingpt-sentiment",
-  "sentiment": "positive",
-  "text": "贵州茅台Q1净利润同比增长18%，超市场预期",
-  "tokensUsed": 22,
-  "latencyMs": 118
-}
-```
-
-**情感标签说明**
-
-| 标签 | 含义 | 典型例子 |
+| 模型 | 端点 | 完整文档 |
 |---|---|---|
-| `positive` | 正面/利好 | 净利润增长、超预期、获得大合同、股价创新高 |
-| `negative` | 负面/利空 | 营收下滑、亏损、被调降评级、负面监管事件 |
-| `neutral` | 中性 | 维持利率不变、正常季报披露、行业例行公告 |
+| Fin-R1 | `POST /api/v1/open-api/llm` | [docs](https://develop.agentpit.io/help#llm) |
+| Kronos | `POST /api/v1/open-api/kronos` | [docs](https://develop.agentpit.io/help#kpred) |
+| FinGPT | `POST /api/v1/open-api/fingpt` | [docs](https://develop.agentpit.io/help#fingpt) |
+| CFGPT | `POST /api/v1/open-api/cfgpt` | [docs](https://develop.agentpit.io/help#cfgpt) |
+| M3 | `POST /api/v1/open-api/microstructure` | [docs](https://develop.agentpit.io/help#microstructure) |
+| Google Search Grounding | `POST /api/v1/open-api/google` | [docs](https://develop.agentpit.io/help#google-search) |
 
-> **注意事项：**
-> - 首次调用有约 60 秒热身延迟（GPU 冷启动），后续请求正常 100~300ms
-> - 输入文本建议 500 字以内，纯金融新闻/公告效果最佳
-> - 情感以金融语境为准，非通用情感（如"茅台跌停" → negative，不是中性）
+> 📖 **完整的请求/响应参数、curl / Python / Node 示例、错误码 · 见** [develop.agentpit.io/help](https://develop.agentpit.io/help)
 
----
+### ⚠️ 常见错误码
 
-
-### 5. Kronos K线预测 API（纯基础模型）
-
-> **Kronos** — 清华大学 IIIS + 自动化系，AAAI 2026 录用，GitHub 31k+ Stars，MIT 协议  
-> 直接调用 Kronos 原始模型，输出纯 OHLCV 预测序列，**不叠加任何多因子权重**  
-> 📌 与上方 K线预测 API（Pro 多因子）的区别：Pro 版叠加了主力资金、RSI、MACD 等 8 个因子；本接口为模型原始输出，适合自行融合因子或对比研究
-
-**接口信息**
-
-| 项目 | 内容 |
-|------|------|
-| 端点 | POST https://api.agentpit.io/v1/open-api/kronos |
-| 认证 | Authorization: Bearer oapk_YOUR_KEY |
-| 申请 | https://develop.agentpit.io/dashboard/open-api/apply?type=KRONOS |
-
-**请求参数**
-
-| 字段 | 类型 | 必填 | 说明 |
-|------|------|------|------|
-| code | string | ✅ | A 股股票代码，如 300308、600519 |
-| days | number | ❌ | 预测天数，范围 1~30，默认 5 |
-
-**请求示例（curl）**
-
-`ash
-curl -X POST https://api.agentpit.io/v1/open-api/kronos \
-  -H "Authorization: Bearer oapk_YOUR_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"code":"300308","days":5}'
-`
-
-**响应示例**
-
-`json
-{
-  "symbol": "300308",
-  "name": "中际旭创",
-  "last_date": "2026-06-26",
-  "last_close": 1332.52,
-  "predictions": [
-    {"date":"2026-06-27","open":1340.1,"high":1368.5,"low":1318.0,"close":1355.2,"volume":412000},
-    {"date":"2026-06-30","open":1355.2,"high":1380.0,"low":1340.0,"close":1372.8,"volume":388000},
-    {"date":"2026-07-01","open":1372.8,"high":1395.0,"low":1355.0,"close":1360.5,"volume":356000},
-    {"date":"2026-07-02","open":1360.5,"high":1370.0,"low":1330.0,"close":1348.0,"volume":320000},
-    {"date":"2026-07-03","open":1348.0,"high":1365.0,"low":1325.0,"close":1358.5,"volume":298000}
-  ],
-  "latencyMs": 820
-}
-`
-
-**Python 示例**
-
-`python
-import requests
-
-API_KEY = "oapk_YOUR_KEY"
-
-resp = requests.post(
-    "https://api.agentpit.io/v1/open-api/kronos",
-    json={"code": "300308", "days": 5},
-    headers={"Authorization": f"Bearer {API_KEY}"},
-    timeout=15,
-)
-data = resp.json()
-
-print(f"{data['name']}  最新收盘: {data['last_close']}")
-for p in data["predictions"]:
-    chg = (p["close"] - data["last_close"]) / data["last_close"] * 100
-    print(f"  {p['date']}  收:{p['close']:.2f}  ({chg:+.2f}%)")
-`
-
-**Node.js 示例**
-
-`javascript
-const res = await fetch("https://api.agentpit.io/v1/open-api/kronos", {
-  method: "POST",
-  headers: {
-    "Authorization": "Bearer oapk_YOUR_KEY",
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({ code: "600519", days: 5 }),
-});
-
-const { name, last_close, predictions } = await res.json();
-console.log(${name} 最新收盘: );
-predictions.forEach(p => {
-  const chg = ((p.close - last_close) / last_close * 100).toFixed(2);
-  console.log(    收:  (%));
-});
-`
-
-> **注意事项：**
-> - 本 API 为纯 Kronos 模型输出，预测仅基于历史价量形态，**不含资金面、基本面信息**
-> - 如需多因子融合版，请使用上方的 K线预测 API（Pro 多因子，KPRED）
-> - 预测天数越长不确定性越高，建议配合其他信号使用，不构成投资建议
-
----
-### 6. CFGPT 中文金融大模型 API
-
-基于同济大学金融智能实验室（FinLab）联合上海人工智能实验室发布的 CFGPT2-7B（InternLM2-7B 底座），专为 A 股市场研究场景微调，擅长年报深度解析、研究报告生成、财务指标计算及金融问答。
-
-**接口地址**
-```
-POST https://api.agentpit.io/v1/open-api/cfgpt
-```
-
-**请求参数**
-
-| 参数 | 类型 | 必填 | 说明 |
-|---|---|---|---|
-| `messages` | array | ✅ | 消息列表，格式同 OpenAI，role 可为 user / assistant / system |
-| `max_new_tokens` | number | ❌ | 最大生成 token 数，默认 512，建议不超过 1024 |
-| `temperature` | number | ❌ | 采样温度 0~1，默认 0.7；设 0 为贪婪解码（确定性输出） |
-
-**Python 示例**
-
-```python
-import requests
-
-API_KEY = "oapk_your_key_here"
-
-def ask_cfgpt(question: str, system: str = None) -> str:
-    messages = []
-    if system:
-        messages.append({"role": "system", "content": system})
-    messages.append({"role": "user", "content": question})
-
-    resp = requests.post(
-        "https://api.agentpit.io/v1/open-api/cfgpt",
-        json={"messages": messages, "max_new_tokens": 512},
-        headers={"Authorization": f"Bearer {API_KEY}"},
-        timeout=60,
-    )
-    resp.raise_for_status()
-    return resp.json()["choices"][0]["message"]["content"]
-
-# 年报分析
-print(ask_cfgpt("分析贵州茅台2023年年报的核心财务指标，包括营收、净利润、毛利率、ROE"))
-
-# 财务指标计算
-print(ask_cfgpt("已知净利润5000万，总资产2亿，总负债8000万，请计算ROE、资产负债率"))
-
-# 多轮对话
-messages = [{"role": "user", "content": "什么是市盈率（PE）？"}]
-resp = requests.post("https://api.agentpit.io/v1/open-api/cfgpt",
-                     json={"messages": messages},
-                     headers={"Authorization": f"Bearer {API_KEY}"}, timeout=60)
-answer = resp.json()["choices"][0]["message"]["content"]
-print("A:", answer)
-
-messages.append({"role": "assistant", "content": answer})
-messages.append({"role": "user", "content": "PE 为 15 倍算高还是低？"})
-resp2 = requests.post("https://api.agentpit.io/v1/open-api/cfgpt",
-                      json={"messages": messages},
-                      headers={"Authorization": f"Bearer {API_KEY}"}, timeout=60)
-print("A:", resp2.json()["choices"][0]["message"]["content"])
-```
-
-**Node.js 示例**
-
-```javascript
-const API_KEY = "oapk_your_key_here";
-
-async function askCfgpt(question) {
-  const res = await fetch("https://api.agentpit.io/v1/open-api/cfgpt", {
-    method: "POST",
-    headers: {
-      "Authorization": `Bearer ${API_KEY}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      messages: [{ role: "user", content: question }],
-      max_new_tokens: 512,
-    }),
-  });
-  const data = await res.json();
-  return data.choices[0].message.content;
-}
-
-// 研报生成
-const report = await askCfgpt("基于以下数据生成一份关于中际旭创的简短研究报告：Q1营收同比+25%，毛利率32%，订单充裕");
-console.log(report);
-```
-
-**返回格式**
-
-```json
-{
-  "choices": [{
-    "message": {
-      "role": "assistant",
-      "content": "贵州茅台2023年年报核心财务指标：
-
-**营收**：150.56亿元，同比增长18.04%
-**净利润**：74.73亿元，同比增长19.16%
-**毛利率**：92.11%
-**ROE**：36.58%"
-    },
-    "finish_reason": "stop"
-  }],
-  "model": "cfgpt2-7b",
-  "latencyMs": 3240
-}
-```
-
-**推荐使用场景**
-
-| 场景 | 示例 prompt |
-|---|---|
-| 年报解析 | "分析贵州茅台2023年年报核心财务指标，包括营收、净利润、毛利率、ROE" |
-| 研报生成 | "基于以下数据生成关于中际旭创的简短研究报告：Q1营收同比+25%，毛利率32%" |
-| 财务指标 | "已知净利润5000万，总资产2亿，总负债8000万，计算ROE、资产负债率" |
-| 金融问答 | "A股创业板退市新规中，连续两年净利润为负的企业会面临哪些处置措施？" |
-
-> **注意事项：**
-> - 首次请求（冷启动）可能有 30~60 秒延迟，GPU 显存预热后后续请求 2~5 秒
-> - CFGPT 专注 A 股中文金融场景，英文或通用问题效果不如专用模型
-> - 建议单次输入不超过 1500 字，过长上下文可能导致响应质量下降
-> - 申请地址：[develop.agentpit.io/dashboard/open-api/apply?type=CFGPT](https://develop.agentpit.io/dashboard/open-api/apply?type=CFGPT)
-
----
-
-## ⚠️ 错误码
-
-| HTTP状态码 | 含义 | 处理方式 |
+| HTTP | 含义 | 处理 |
 |---|---|---|
-| 401 | API Key 无效或已撤销 | 检查Key是否正确，或重新申请 |
-| 429 | 超出月度Token额度 | 联系管理员提升额度 |
-| 502 | 预测服务异常 | 稍后重试 |
+| 401 | API Key 无效或已撤销 | 检查 Key 或重新申请 |
+| 429 | 超出月度 Token 额度 | 联系管理员提升额度 |
+| 502 | 上游模型服务异常 | 稍后重试 |
 
 ---
 
 ## 🗺️ 路线图
 
 - [x] Google Search Grounding API
-- [x] Pro 多因子K线预测API（Kronos + 技术/资金/估值 8因子）
-- [x] 用户自定义因子权重
-- [x] **Fin-R1 金融大模型API**（上海财经大学，A股中文优化，链式推理）
-- [x] **FinGPT 情感分析API**（哥伦比亚大学 AI4Finance，中英文双语，positive/negative/neutral）
-- [x] **CFGPT 中文金融大模型API**（同济大学 FinLab + 上海AI实验室，A 股年报/研报专项）
-- [ ] 轩辕 XuanYuan（度小满金融大模型）API
-- [ ] 更多金融开源大模型持续上线中...
+- [x] Kronos K 线预测 API(清华 · 支持自定义因子权重)
+- [x] Fin-R1 金融大模型 API(上海财经大学 · A 股中文优化 · 链式推理)
+- [x] FinGPT 情感分析 API(哥大 AI4Finance · 中英双语)
+- [x] CFGPT 中文金融大模型 API(同济 · A 股年报/研报专项)
+- [x] M3 市场微观结构模型 API(北京中关村学院 · 订单流生成)
+- [ ] 轩辕 XuanYuan FinX1 API(度小满 · GPT-O1 级金融推理)
+- [ ] DISC-FinLLM API(复旦 · 金融 RAG 场景)
+- [ ] PIXIU / FinMA API(武大 · FLARE 评测框架)
+- [ ] BloombergGPT 开源等价物评测对比
+- [ ] 中文金融大模型 Benchmark 公开榜单
 
-> ⭐ Star 本仓库，第一时间获取新API上线通知
+> ⭐ Star 本仓库,第一时间获取新模型上线通知
 
 ---
 
+## 🤝 贡献
+
+**发现好的开源金融模型漏收了?** 欢迎 [开 Issue](https://github.com/agentpit-io/finance-llm-zoo/issues/new) 提名新模型 · 请附:
+- GitHub 仓库地址
+- 原始论文/技术报告
+- 使用的开源许可证
+- 你为什么觉得值得收录
+
+我们会评估其开源属性(许可证)、技术定位、上游活跃度后决定是否加入策展。
+
+---
 
 ## 📄 License
 
-MIT License — 免费使用，欢迎 Fork 和 Star ⭐
+策展仓库本身采用 **MIT License** · 但**每个收录的模型遵循其原始许可证**(见对比表许可证列)· 使用前请查阅上游仓库。
 
 ---
 
 <p align="center">
-  Made with ❤️ by <a href="https://www.agentpit.io">AgentPit</a> ·
-  <a href="https://develop.agentpit.io/help">完整文档</a> ·
-  <a href="https://www.agentpit.io/finance">立即注册</a>
+  由 <a href="https://github.com/agentpit-io">AgentPit</a> 公益维护 ·
+  <a href="https://www.agentpit.io/finance-llm-zoo">项目主页</a> ·
+  <a href="https://develop.agentpit.io/help">API 完整文档</a> ·
+  <a href="https://github.com/hangeaiagent/kronos-free-api">上游研究仓</a>
 </p>
